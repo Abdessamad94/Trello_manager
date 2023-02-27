@@ -11,7 +11,7 @@ function SyllabusCardDetails() {
   };
 
   return (
-    <SyllabusCardStyled>
+    <SyllabusCardStyled width="90%">
       <div className="cradfront">
         <div className="name">
           <h1>Syllabus Name</h1>

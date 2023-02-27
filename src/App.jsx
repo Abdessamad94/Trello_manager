@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
-import { Btn, Navbar } from "./components/styled/style";
+import { BgAnimation, Btn, Navbar } from "./components/styled/style";
 import SyllabusDetails from "./pages/SyllabusDetails";
 import Syllabus from "./pages/Syllabus";
 import { useNavigate } from "react-router-dom";
@@ -12,6 +12,14 @@ function App() {
 
   return (
     <>
+      <BgAnimation>
+        <div className="big"></div>
+        <div className="meduim"></div>
+        <div className="small"></div>
+        <div className="meduim"></div>
+        <div className="small"></div>
+        <div className="small"></div>
+      </BgAnimation>
       <Navbar>
         <div className="logo">Logo</div>
         <div className="links"></div>
