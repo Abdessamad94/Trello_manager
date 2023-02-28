@@ -1,13 +1,21 @@
 import styled from "styled-components";
 
 export const Navbar = styled.header`
-  width: 90%;
-  margin: 8px auto 0px auto;
-  height: 8vh;
-  display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
+  min-height: 8vh;
+  background-color: white;
+  .in-nav {
+    display: grid;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    grid-template-columns: 1fr 4fr 1fr;
+    .logo {
+      img {
+        max-width: 90px;
+      }
+    }
+  }
   box-shadow: 0px 0px 7px 1px #d5d5d5;
-  border-radius: 8px;
   border: 0.2px solid #cdcdcd;
   div {
     display: flex;
@@ -28,17 +36,22 @@ export const Contianer = styled.section`
 
 export const HomeContianer = styled.section`
   width: 90%;
+  margin-top: 8vh;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   scroll-snap-type: y mandatory;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const SyllabusContianer = styled.section`
   width: 90%;
   margin: 0 auto;
+  margin-top: 8vh;
   height: calc(92vh - 10px);
   .addsyllabus {
     display: flex;
@@ -93,7 +106,7 @@ export const SyllabusDetailsContianer = styled.section`
         filter: blur(3px);
       }
       .textarea textarea {
-        width: 90%;
+        width: 93%;
         border: 0.2px solid #cdcdcd;
         border-radius: 10px;
         margin: 5px;

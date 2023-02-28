@@ -17,7 +17,7 @@ function SyllabusDetails() {
   };
   const docs = [
     {
-      uri: "https://drive.google.com/file/d/1-tJ8YIuYnNfB_b8nyoMSmBZn9Cyc3pFF/view?usp=sharing",
+      uri: "https://pdfhost.io/pdf/8a741f32-c7e6-46a4-a509-c702c96d1f5f/8a4af7d0-0725-4489-8e4e-eefc0aa06922.pdf",
     }, // Remote file
   ];
   return (
@@ -42,6 +42,13 @@ function SyllabusDetails() {
                   <option value="Home Work">Home Work</option>
                   <option value="Exercise">Exercise</option>
                 </Field>
+                <ErrorMessage name="ex" />
+                <Field
+                  placeholder="Name"
+                  name="name"
+                  type="date"
+                  as={inputText}
+                />
                 <ErrorMessage name="name" />
               </div>
               <div className="textarea">

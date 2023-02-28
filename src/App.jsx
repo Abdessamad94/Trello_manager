@@ -12,26 +12,25 @@ function App() {
 
   return (
     <>
-      <BgAnimation>
-        <div className="big"></div>
-        <div className="meduim"></div>
-        <div className="small"></div>
-        <div className="meduim"></div>
-        <div className="small"></div>
-        <div className="small"></div>
-      </BgAnimation>
       <Navbar>
-        <div className="logo">Logo</div>
-        <div className="links"></div>
-        <div className="avatar">
-          <Btn
-            bg="#7b7bff"
-            onClick={() => {
-              navigate("/syllabus");
-            }}
-          >
-            Connect
-          </Btn>
+        <div className="in-nav">
+          <div className="logo">
+            <img
+              src="https://download.logo.wine/logo/Trello/Trello-Logo.wine.png"
+              alt="Logo"
+            />
+          </div>
+          <div className="links"></div>
+          <div className="avatar">
+            <Btn
+              bg="#7b7bff"
+              onClick={() => {
+                navigate("/syllabus");
+              }}
+            >
+              Connect with Trello
+            </Btn>
+          </div>
         </div>
       </Navbar>
       <Routes>
