@@ -17,9 +17,6 @@ function SyllabusCardDetails() {
           <h1>Syllabus Name</h1>
           <small> (Type)</small>
         </div>
-        <div className="disc">
-          <p>description</p>
-        </div>
         <div className="date">
           <p>1/1/2023</p>
         </div>

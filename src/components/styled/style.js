@@ -36,7 +36,6 @@ export const Contianer = styled.section`
 
 export const HomeContianer = styled.section`
   width: 90%;
-  margin-top: 8vh;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -51,13 +50,13 @@ export const HomeContianer = styled.section`
 export const SyllabusContianer = styled.section`
   width: 90%;
   margin: 0 auto;
-  margin-top: 8vh;
   height: calc(92vh - 10px);
   .addsyllabus {
     display: flex;
-    height: 30%;
+    height: 35%;
+    padding-bottom: 15px;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     flex-direction: column;
   }
   form {
@@ -66,7 +65,7 @@ export const SyllabusContianer = styled.section`
     flex-direction: column;
   }
   .syllabus {
-    height: 70%;
+    height: 60%;
     overflow-y: auto;
     scroll-behavior: smooth;
   }
@@ -106,11 +105,12 @@ export const SyllabusDetailsContianer = styled.section`
         filter: blur(3px);
       }
       .textarea textarea {
-        width: 93%;
+        min-width: 93%;
+        height: 100px;
+        resize: none;
         border: 0.2px solid #cdcdcd;
         border-radius: 10px;
         margin: 5px;
-        height: 120px;
         padding: 8px 10px;
       }
       .inputstext {
