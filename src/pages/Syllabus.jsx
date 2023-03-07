@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import {
   SyllabusContianer,
   inputText,
@@ -10,16 +10,31 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 
 
 function syllabus() {
-  
+  const [token, setToken] = useState(localStorage.getItem('token'));
+  const [userName, setUserName] = useState('');
+
 
   const initialValues = { name: "", file: [] };
   const onSubmit = (values) => {
     alert(JSON.stringify(values, null, 2));
   };
+  useEffect(() => {
+    const fetchUser = async () => {
+      const response = await fetch(`https://api.trello.com/1/members/me?token=${token}&key=c6f34b581c35de2ce1660c00e4a2a027`);
+      const data = await response.json();
+      console.log("Heloooooooooow",data)
+      setUserName(data.fullName);
+    };
+
+    if (token) {
+      fetchUser();
+    }
+  }, [token]);
+
   return (
     <SyllabusContianer>
       <div className="addsyllabus">
-        <h1>Add a Syllabus</h1>
+        <h1> Welcome, {userName} would add a Syllabus</h1>
         <Formik initialValues={initialValues} onSubmit={onSubmit}>
           <Form>
             <Field name="name" type="text" as={inputText} />
