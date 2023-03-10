@@ -87,26 +87,30 @@ export const SyllabusDetailsContianer = styled.section`
   }
   .homeworks {
     width: 40%;
-
     .addsyllabus {
-      height: 40%;
-      position: relative;
+      height: 50%;
       display: flex;
-      justify-content: center;
       align-items: center;
-      .blur {
-        border-radius: 10px;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: -1;
-        filter: blur(3px);
+      justify-content: center;
+      form {
+        width: 90%;
+        .selectors {
+          display: flex;
+          align-items: center;
+          div {
+            width: 50%;
+            select {
+              width: 95%;
+            }
+            input {
+              width: 85%;
+            }
+          }
+        }
       }
       .textarea textarea {
         min-width: 93%;
-        height: 100px;
+        height: 80px;
         resize: none;
         border: 0.2px solid #cdcdcd;
         border-radius: 10px;
@@ -114,6 +118,11 @@ export const SyllabusDetailsContianer = styled.section`
         padding: 8px 10px;
       }
       .inputstext {
+        width: 100%;
+        .name {
+          display: flex;
+          flex-direction: column;
+        }
         select {
           border: 0.2px solid #cdcdcd;
           border-radius: 10px;
@@ -124,14 +133,12 @@ export const SyllabusDetailsContianer = styled.section`
     }
 
     .syllabus {
-      height: 60%;
+      height: 50%;
       overflow-y: scroll;
       &::-webkit-scrollbar {
         display: none;
       }
     }
-  }
-  .doc {
   }
 `;
 
@@ -219,32 +226,13 @@ export const inputText = styled.input`
   border: 0.2px solid #cdcdcd;
   border-radius: 10px;
   margin: 5px;
+  width: 93%;
 `;
 export const inputFile = styled.input`
   padding: 8px 10px;
   border: 0.2px solid #cdcdcd;
   border-radius: 10px;
   margin: 5px;
-`;
-
-export const BgAnimation = styled.div`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  div {
-    width: 50px;
-    height: 10px;
-    background-color: black;
-    border-raduis: 10px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transform: rotate(327deg);
-    border-radius: 10px;
-  }
 `;
 
 export const Section = styled.section`
@@ -276,4 +264,9 @@ export const Section = styled.section`
       }
     }
   }
+`;
+
+export const Error = styled.div`
+  color: #ff8282;
+  text-align: center;
 `;

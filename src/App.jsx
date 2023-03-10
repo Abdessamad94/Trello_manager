@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
-import { BgAnimation, Btn, Navbar } from "./components/styled/style";
+import { Btn, Navbar } from "./components/styled/style";
 import SyllabusDetails from "./pages/SyllabusDetails";
 import Syllabus from "./pages/Syllabus";
 import { useNavigate } from "react-router-dom";
