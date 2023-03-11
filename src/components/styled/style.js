@@ -208,7 +208,7 @@ export const Btn = styled.button`
   padding: 10px 20px;
   color: white;
   background-color: ${({ bg }) => bg};
-  border-radius: 50px;
+  border-radius: 10px;
   border: 0.2px solid #cdcdcd;
   display: flex;
   align-items: center;
@@ -218,6 +218,28 @@ export const Btn = styled.button`
   svg {
     margin-right: 5px;
     font-size: 15px;
+  }
+`;
+export const BtnHome = styled.button`
+  padding: 12px 30px;
+  margin-top: 20px;
+  transition: all 0.5s;
+  color: black;
+  background-color: ${({ bg }) => bg};
+  border-radius: 10px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  cursor: pointer;
+  svg {
+    margin-right: 5px;
+    font-size: 15px;
+  }
+  &:hover {
+    color: white;
+    background-color: black;
   }
 `;
 
@@ -255,13 +277,16 @@ export const Section = styled.section`
       display: flex;
       align-items: center;
       h1 {
-        font-size: 30px;
-        margin-bottom: 10px;
+        font-size: 55px;
+        font-weight: 600;
       }
       svg {
         font-size: 40px;
         margin-right: 8px;
       }
+    }
+    p {
+      font-size: 17px;
     }
   }
 `;

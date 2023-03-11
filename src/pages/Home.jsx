@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  Btn,
+  BtnHome,
   Contianer,
   HomeContianer,
   Section,
@@ -19,7 +19,7 @@ function Home() {
         <Section>
           <div className="text">
             <div className="title">
-              <FcAlarmClock />
+              {/* <FcAlarmClock /> */}
               <h1>Lorem ipsum dolor sit amet</h1>
             </div>
             <p>
@@ -32,6 +32,7 @@ function Home() {
               eget, tempor sodales tellus. Praesent imperdiet condimentum augue
               eget ornare.
             </p>
+            <BtnHome bg={"white"}>Discover</BtnHome>
           </div>
           <div className="img">
             <img

@@ -1,19 +1,22 @@
 import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import { Btn, Navbar } from "./components/styled/style";
 import SyllabusDetails from "./pages/SyllabusDetails";
 import Syllabus from "./pages/Syllabus";
 import { useNavigate } from "react-router-dom";
-import Login from "./components/login";
-
+import Login from "./components/Login";
+import IsLogin from "./components/IsLogin";
+import { useQuery } from "react-query";
+import { getUserAvatar } from "./api/functions";
 
 function App() {
-  const navigate = useNavigate();
-  const [token, setToken] = useState(localStorage.getItem("token"));
-  const [userName, setUserName] = useState("");
-
+  // const navigate = useNavigate();
+  const token = localStorage.getItem("token");
+  // const [token, setToken] = useState(localStorage.getItem("token"));
+  const user = JSON.parse(localStorage.getItem("user"));
+  useQuery("avatar", getUserAvatar(user.id, token));
   return (
     <>
       <Navbar>
@@ -25,15 +28,19 @@ function App() {
             />
           </div>
           <div className="links"></div>
-          <div className="avatar">
-            <Login setToken={setToken} />
-          </div>
+          <div className="avatar">{user ? <IsLogin /> : <Login />}</div>
         </div>
       </Navbar>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/syllabus_details" element={<SyllabusDetails />} />
-        <Route path="/syllabus" element={<Syllabus />} />
+        <Route
+          path="/syllabus"
+          element={user ? <Syllabus /> : <Navigate replace to={"/"} />}
+        />
+        <Route
+          path="/syllabus_details"
+          element={user ? <SyllabusDetails /> : <Navigate replace to={"/"} />}
+        />
       </Routes>
     </>
   );

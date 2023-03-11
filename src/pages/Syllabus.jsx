@@ -8,27 +8,32 @@ import {
 import SyllabusCard from "../components/SyllabusCard";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { useQuery } from "react-query";
-import { getUser,checkBoards } from "../api/functions";
+import { getUser, checkBoards } from "../api/functions";
 import { addCard } from "../api/cards";
 import { getBoard } from "../api/boards";
 
 function syllabus() {
-
   const initialValues = { name: "", file: [] };
   const onSubmit = (values) => {
     alert(JSON.stringify(values, null, 2));
   };
- 
- 
-  const { isLoading, error, data } = useQuery("Board",getUser);
 
-  const checkBr = checkBoards(data?.idBoards)
+  // const user = JSON.parse(localStorage.getItem("user"));
 
+  // const { isLoading, error, data: user } = useQuery("user", getUser);
+  // const {
+  //   isLoading: bordisLoding,
+  //   error: bordErr,
+  //   data: bord,
+  // } = useQuery("bord", checkBoards());
+
+  // const checkBr = checkBoards(data?.idBoards)
+  const user = JSON.parse(localStorage.getItem("user"));
+  console.log("user in ", user);
   return (
     <SyllabusContianer>
       <div className="addsyllabus">
-        {console.log(checkBr) }
-        <h1> Welcome, {data?.username} would add a Syllabus</h1>
+        <h1> Welcome, {user?.username} would add a Syllabus</h1>
         <Formik initialValues={initialValues} onSubmit={onSubmit}>
           <Form>
             <Field name="name" type="text" as={inputText} />

@@ -1,5 +1,7 @@
 import React from "react";
 import { Btn } from "./styled/style";
+import { useQuery } from "react-query";
+import { getUser } from "../api/functions";
 
 const Login = ({ setToken }) => {
   const handleLogin = () => {
@@ -19,8 +21,12 @@ const Login = ({ setToken }) => {
         return acc;
       }, {});
     if (hashParams) {
-      setToken(hashParams.token);
+      // setToken(hashParams.token);
       localStorage.setItem("token", hashParams.token);
+      const { isLoading, error, data } = useQuery(
+        "user",
+        getUser(hashParams.token)
+      );
     } else {
       alert("Login failed. Please try again.");
     }
