@@ -8,41 +8,27 @@ import {
 import SyllabusCard from "../components/SyllabusCard";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { useQuery } from "react-query";
-import { getUser } from "../api/functions";
+import { getUser,checkBoards } from "../api/functions";
+import { addCard } from "../api/cards";
+import { getBoard } from "../api/boards";
 
 function syllabus() {
-  const [token, setToken] = useState(localStorage.getItem("token"));
-  const [userName, setUserName] = useState("");
 
   const initialValues = { name: "", file: [] };
   const onSubmit = (values) => {
     alert(JSON.stringify(values, null, 2));
   };
-  // useEffect(() => {
-  //   const fetchUser = async () => {
-  //     const response = await fetch(
-  //       `https://api.trello.com/1/members/me?token=${token}&key=c6f34b581c35de2ce1660c00e4a2a027`
-  //     );
-  //     const data = await response.json();
-  //     console.log("Date", data);
-  //     setUserName(data.fullName);
-  //   };
+ 
+ 
+  const { isLoading, error, data } = useQuery("Board",getUser);
 
-  //   if (token) {
-  //     fetchUser();
-  //   }
-  // }, [token]);
-
-  const { isLoading, error, data } = useQuery("User", getUser);
-  if (isLoading) return "Loading...";
-
-  if (error) return "An error has occurred: " + error.message;
+  const checkBr = checkBoards(data?.idBoards)
 
   return (
     <SyllabusContianer>
-      {console.log(" data :", data.username)}
       <div className="addsyllabus">
-        <h1> Welcome, {data.username} would add a Syllabus</h1>
+        {console.log(checkBr) }
+        <h1> Welcome, {data?.username} would add a Syllabus</h1>
         <Formik initialValues={initialValues} onSubmit={onSubmit}>
           <Form>
             <Field name="name" type="text" as={inputText} />
