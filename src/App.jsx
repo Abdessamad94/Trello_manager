@@ -16,7 +16,7 @@ function App() {
   const token = localStorage.getItem("token");
   // const [token, setToken] = useState(localStorage.getItem("token"));
   const user = JSON.parse(localStorage.getItem("user"));
-  useQuery("avatar", getUserAvatar(user.id, token));
+  useQuery("avatar", getUserAvatar(user?.id, token));
   return (
     <>
       <Navbar>

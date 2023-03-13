@@ -23,10 +23,7 @@ const Login = ({ setToken }) => {
     if (hashParams) {
       // setToken(hashParams.token);
       localStorage.setItem("token", hashParams.token);
-      const { isLoading, error, data } = useQuery(
-        "user",
         getUser(hashParams.token)
-      );
     } else {
       alert("Login failed. Please try again.");
     }
