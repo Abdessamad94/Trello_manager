@@ -36,7 +36,7 @@ function Home() {
           </div>
           <div className="img">
             <img
-              src="https://www.freepnglogos.com/uploads/cat-png/cat-boarding-24.png"
+              src="https://obelisk.themescamp.com/demo1/wp-content/uploads/sites/2/2021/09/001.jpg"
               alt="cats"
               srcset=""
             />

@@ -270,6 +270,7 @@ export const Section = styled.section`
   .img {
     img {
       max-width: 100%;
+      border-radius: 10px;
     }
   }
   .text {
