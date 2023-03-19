@@ -29,7 +29,7 @@ function syllabus() {
 
   // const checkBr = checkBoards(data?.idBoards)
   const user = JSON.parse(localStorage.getItem("user"));
-  console.log("user in ", user);
+  // console.log("user in ", user);
   return (
     <SyllabusContianer>
       <div className="addsyllabus">

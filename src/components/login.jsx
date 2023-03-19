@@ -1,9 +1,10 @@
 import React from "react";
 import { Btn } from "./styled/style";
-import { useQuery } from "react-query";
 import { getUser } from "../api/functions";
 
 const Login = ({ setToken }) => {
+  const user = localStorage.getItem("user");
+
   const handleLogin = () => {
     const authUrl = `https://trello.com/1/authorize?response_type=token&key=${
       import.meta.env.VITE_API_KEY
@@ -21,9 +22,9 @@ const Login = ({ setToken }) => {
         return acc;
       }, {});
     if (hashParams) {
-      // setToken(hashParams.token);
       localStorage.setItem("token", hashParams.token);
-        getUser(hashParams.token)
+
+      getUser(hashParams.token);
     } else {
       alert("Login failed. Please try again.");
     }

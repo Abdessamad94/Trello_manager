@@ -5,18 +5,15 @@ import Home from "./pages/Home";
 import { Btn, Navbar } from "./components/styled/style";
 import SyllabusDetails from "./pages/SyllabusDetails";
 import Syllabus from "./pages/Syllabus";
-import { useNavigate } from "react-router-dom";
 import Login from "./components/Login";
 import IsLogin from "./components/IsLogin";
 import { useQuery } from "react-query";
-import { getUserAvatar } from "./api/functions";
 
 function App() {
   // const navigate = useNavigate();
   const token = localStorage.getItem("token");
   // const [token, setToken] = useState(localStorage.getItem("token"));
   const user = JSON.parse(localStorage.getItem("user"));
-  useQuery("avatar", getUserAvatar(user?.id, token));
   return (
     <>
       <Navbar>
